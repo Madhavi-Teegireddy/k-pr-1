@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let btnArr = [
+        {name: "primary", color:"white"},
+        {name: "primary1", color:"red"},
+        {name: "primary2", color:"purple"},
+        {name: "primary3", color:"yellow"},
+        {name: "primary4", color:"blue"},
+        {name: "primary5", color:"green"},
+        {name: "primary6", color:"orange"},
+        {name: "primary7", color:"pink"},
+        {name: "primary8", color:"gray"}
+    ]
+
+    let box = document.createElement("div");
+
+    btnArr.forEach(function (elem) {
+        let btn = document.createElement("button");
+        btn.innerText = elem.name;
+        btn.style.color = elem.color;
+        box.append(btn);
+        document.querySelector("body").append(box);
+    });
+
+
+</script>

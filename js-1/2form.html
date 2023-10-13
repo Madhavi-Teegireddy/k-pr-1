@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Name" id="name"/>
+        <input type="number" placeholder="Enter Number" id="num"/>
+
+        <input type="submit" value="Login"/>
+    </form>
+
+    <h1 id="hy">jh</h1>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", formFunc);
+
+    function formFunc(e) {
+        e.preventDefault()
+        let userName = document.querySelector("#name").value;
+        let mob = document.querySelector("#num").value;
+        console.log(userName, mob)
+    }
+</script>

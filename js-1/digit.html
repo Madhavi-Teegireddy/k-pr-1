@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+      <input type="number" placeholder="enter number" id="num"/>
+      <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", myDigit);
+
+    function myDigit(e) {
+        e.preventDefault()
+        let num1 = document.querySelector("#num").value;
+        // console.log(num1)
+
+        // console.log(`${num1 < 10 ? "single digit number" : "greater than 10"}`);
+        if(num1 < 10){
+            console.log("single digit")
+        }else if(num1 < 99){
+            console.log("Double digit num")
+        }else if(num1 < 999){
+            console.log("Three digit num")
+        }else{
+            console.log("num has more than 3 digits")
+        }
+    }
+</script>
