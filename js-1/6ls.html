@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    localStorage.setItem("hero", "sdfjhsejf");
+
+    localStorage.setItem("rating", 98);
+    localStorage.setItem("rating", 8);
+
+    let name = localStorage.getItem("hero");
+    console.log(name); 
+
+    let art = localStorage.getItem("rating");
+    console.log(art);
+
+    // localStorage.removeItem("hero");
+    // localStorage.clear();
+
+    let num = [1,2,3,4,4];
+    // num = JSON.stringify(num)
+
+    localStorage.setItem("arr",JSON.stringify(num))
+
+    let obj = {
+        name: "sdfsd",
+        age: "33"
+    }
+    localStorage.setItem("objname",JSON.stringify(obj))
+
+    let getAr = localStorage.getItem("arr");
+    console.log(getAr)
+    let getObj = localStorage.getItem("objname");
+    console.log(getObj)
+
+</script>
