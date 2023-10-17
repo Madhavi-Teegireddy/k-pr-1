@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="lk">Like</button>
+        <button id="dlk">DisLike</button>
+    </div>
+
+    <div>
+        <p>likes: <span id="lkCon"></span></p>
+        <p>dislikes: <span id="dlkCon"></span></p>
+    </div>
+</body>
+</html>
+<script>
+        let count = localStorage.getItem("likeCount");
+    document.getElementById("lkCon").innerText = count;
+
+    let dLike = localStorage.getItem("dslikeCount");
+    document.getElementById("dlkCon").innerText = dLike;
+
+
+    document.querySelector("#lk").addEventListener("click", likeFunc)
+    document.querySelector("#dlk").addEventListener("click", dilikeFunc);
+
+    function likeFunc(){
+        console.log("like1");
+        count++;
+        document.getElementById("lkCon").innerText = count;
+        localStorage.setItem("likeCount", count);
+    }
+
+    function dilikeFunc(){
+        console.log("like2")
+        dLike++;
+        document.getElementById("dlkCon").innerText = dLike;
+        localStorage.setItem("dslikeCount", dLike)
+    } 
+</script>
