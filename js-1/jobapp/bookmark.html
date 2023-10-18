@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>salary</th>
+                <th>job applied</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+</html>
+<script>
+    let bookmarkdJobs = JSON.parse(localStorage.getItem("bookmark") || []);
+    console.log(bookmarkdJobs)
+
+    bookmarkdJobs.forEach(function (elem, index) {
+        let row = document.createElement("tr");
+
+        let c1 = document.createElement("td");
+        c1.innerText = elem.name
+
+        let c2 = document.createElement("td");
+        c2.innerText = elem.salary
+
+        let c3 = document.createElement("td");
+        c3.innerText = elem.job;
+
+        row.append(c1,c2,c3);
+        document.querySelector("tbody").append(row);
+
+    })
+
+    </script>

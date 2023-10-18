@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            background-color: teal;
+        }
+        .navbar a{
+            text-decoration: none;
+            margin: auto;
+            color: aliceblue;
+            font-size: 18px;
+        }
+        .form{
+            width:300px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            background-color: teal;
+            gap: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+       <a href="./index.html">Home</li>
+       <a href="./applied.html">Applied Jobs</a>
+       <a href="./bookmark.html">Book marks</a>
+    </div>
+
+    <form class="form">
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your Name"/>
+
+        <label>Enter Salary</label>
+        <input type="number" id="number" placeholder="Enter salary"/>
+
+        <label for="job-select">Job Applied</label>
+         <select name="jobs" id="job">
+           <option value="">Please choose an option</option>
+           <option value="frontend">FrontEnd</option>
+           <option value="backend">BackEnd</option>
+           <option value="testing">Testing</option>
+         </select>
+
+         <input type="submit" value="submit"/>
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", submitFunc);
+    // let taskArr = [];
+    // let taskArr = JSON.parse(localStorage.getItem("infoList"));
+    // console.log(taskArr)
+
+    // let taskArr;
+    // if(localStorage.getItem("infoList") == null) {
+    //     taskArr = [];
+    // }else{
+    //     taskArr = JSON.parse(localStorage.getItem("infoList"));
+    // }
+
+    let taskArr = JSON.parse(localStorage.getItem("infoList") || [])
+
+    function submitFunc(e){
+        e.preventDefault()
+       let userName = document.getElementById("name").value;
+       let userSalary = document.getElementById("number").value;
+       let userJobs = document.getElementById("job").value
+        console.log(userName,userSalary,userJobs)
+
+        let taskObj = {
+            name: userName,
+            salary: userSalary,
+            job: userJobs
+        }
+        // console.log(taskObj)
+        taskArr.push(taskObj)
+        // console.log(taskArr)
+
+        localStorage.setItem("infoList",JSON.stringify(taskArr));
+    }
+
+
+</script>

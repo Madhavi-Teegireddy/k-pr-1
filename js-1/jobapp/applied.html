@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Job Applied</th>
+            <th>BookMark</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        
+        </tbody>
+      </table>
+</body>
+</html>
+
+<script>
+    let appliedJobs = JSON.parse(localStorage.getItem("infoList") || [])
+    console.log(appliedJobs);
+
+    let bookmarkArr = []
+
+    appliedJobs.forEach(function (elem) {
+        let row = document.createElement("tr");
+
+        let c1 = document.createElement("td");
+        c1.innerText = elem.name;
+
+        let c2 = document.createElement("td");
+        c2.innerText = elem.salary;
+
+        let c3 = document.createElement("td");
+        c3.innerText = elem.job;
+       
+        let c4 = document.createElement("td");
+        c4.innerText = "Bookmark";
+        // c4.style.backgroundColor = "pink";
+        c4.style.color = "teal";
+
+        c4.addEventListener("click", function(){
+            bookmarkFunc(elem)
+        })
+
+        function bookmarkFunc(elem, index) {
+           bookmarkArr.push(elem)
+           localStorage.setItem("bookmark",JSON.stringify(bookmarkArr))
+        }
+    
+        row.append(c1,c2,c3,c4);
+        document.querySelector("tbody").append(row);
+    });
+</script>
