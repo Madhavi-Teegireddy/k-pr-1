@@ -223,3 +223,14 @@
 // x();
 
 
+let mobile = [
+    {name:"sdsd", age:23},
+    {name:"sdsd", age:23},
+    {name:"sdsd", age:23},
+    {name:"sdsd", age:23},
+    {name:"sdsd", age:23}
+]
+
+for(let m=0; m<mobile.length; m++){
+    console.log(m)
+}
